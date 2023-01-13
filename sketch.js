@@ -148,9 +148,19 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
+function touchStarted() {
+  if (!fullscreen()) {
+    fullscreen(true);
+  }
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+document.ontouchmove = function (event) {
+  event.preventDefault();
+};
 
 function draw() {
   frameRate(60);
@@ -173,11 +183,11 @@ function draw() {
 }
 
 function decode() {
-  if (index === 1) { console.log('NO') };
-  if (index === 10) { console.log('MORE') };
-  if (index === 28) { console.log('WATER,') };
-  if (index === 60) { console.log('THE') };
-  if (index === 72) { console.log('FIRE') };
-  if (index === 92) { console.log('NEXT') };
-  if (index === 108) { console.log('TIME!') };
+  if (index === 1) { console.log('NO') }
+  if (index === 10) { console.log('MORE') }
+  if (index === 28) { console.log('WATER,') }
+  if (index === 60) { console.log('THE') }
+  if (index === 72) { console.log('FIRE') }
+  if (index === 92) { console.log('NEXT') }
+  if (index === 108) { console.log('TIME!') }
 }
